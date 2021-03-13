@@ -1,7 +1,7 @@
 ﻿@page "/experience"
 @using dotnetPersonalSiteStatic.Data
 
-<h1>Experience</h1>
+<h1>Professional Experience</h1>
 
 @if (Companies == null)
 {
@@ -11,9 +11,17 @@ else
 {
     @foreach (Company company in Companies)
     {
-        <div class="container">
-            <h2>@company.Name</h2>
-            <div class="container">
+        <div class="container company">
+            @if (company.Logo != null)
+            {
+                <img src="@company.Logo" alt="@company.Name">
+            }
+            else
+            {
+                <h2>@company.Name</h2>
+            }
+
+            <div class="container role">
                 @foreach (Role role in company.Roles)
                 {
                     <div class="row">
@@ -102,6 +110,7 @@ else
         // Wayfair creation
         Company Wayfair = new Company {
             Name = "Wayfair",
+            Logo = "https://dm2305files.storage.live.com/y4mRxH4MYWZs9uVzKP3yMyPX8njLIkcdZHnrRdwCXk891NzLJXp3fuhtDl7rlu1zUEnCw4tIFc5N1_zQ9p6RMnBJ2aFuhe3zOxzTRdAXbbhBgM2LX314QjKpL2QbQqWFV2wtlA3AuMkqUpf0FTyGJibHSH1vjqrUC3lZUjIXXE0EGmH-4sUAR2PxcK_0BBiXh0p?width=256&height=60&cropmode=none",
             Roles = wayfairRoles
         };
 
@@ -134,6 +143,7 @@ else
         Company Cree = new Company
         {
             Name = "Cree",
+            Logo = "https://dm2305files.storage.live.com/y4m1AGjRjwmDhtaq-UaP5LEBUEpkrOQeiADdSJ4bUZsoBR-NcCw6ZLEksIMIfZSRh5EGqztCzQGwWpICyftf1bK3f033P4LTalvBIwws7jvpg7om4qJoZ7TurPVwoE98XSKmtSnArBNVtipcWqYHf4ZPGakRZjUuUVLFm2Vt9BNg9DndgGgQsItSjfeqO_oAMBw?width=256&height=75&cropmode=none",
             Roles = creeRoles
         };
 
