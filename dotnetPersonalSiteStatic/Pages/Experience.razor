@@ -1,51 +1,52 @@
 ﻿@page "/experience"
 @using dotnetPersonalSiteStatic.Data
 
-<h1>Professional Experience</h1>
+<div class="container">
+    <h1>Experience</h1>
 
-@if (Companies == null)
-{
-    <p>Loading...</p>
-}
-else
-{
-    @foreach (Company company in Companies)
+    @if (Companies == null)
     {
-        <div class="container company">
-            @if (company.Logo != null)
-            {
-                <img src="@company.Logo" alt="@company.Name">
-            }
-            else
-            {
-                <h2>@company.Name</h2>
-            }
-
-            <div class="container role">
-                @foreach (Role role in company.Roles)
-                {
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <h5>@role.Title</h5>
-                        </div>
-                        <div class="col-sm-4" style="text-align:right;">
-                            <h5>@role.StartDateString - @role.EndDateString</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            @foreach (string experience in role.Experience)
-                            {
-                                <li>@experience</li>
-                            }
-                        </ul>
-                    </div>
-                }
-            </div>
-        </div>   
+        <p>Loading...</p>
     }
-}
+    else
+    {
+        @foreach (Company company in Companies)
+        {
+            <div class="container company">
+                @if (company.Logo != null)
+                {
+                    <img src="@company.Logo" alt="@company.Name">
+                }
+                else
+                {
+                    <h2>@company.Name</h2>
+                }
 
+                <div class="container role">
+                    @foreach (Role role in company.Roles)
+                    {
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h5>@role.Title</h5>
+                            </div>
+                            <div class="col-sm-4" style="text-align:right;">
+                                <h5>@role.StartDateString - @role.EndDateString</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <ul>
+                                @foreach (string experience in role.Experience)
+                                {
+                                    <li>@experience</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
 
 @code {
     List<Company> Companies = new List<Company>();
@@ -77,7 +78,7 @@ else
 
         // Role - Data Integration
         List<string> diExperience = new List<string>();
-        diExperience.Add("Led a cross-functional team of business users, data scientists, and computer engineers to improve supply chain data quality and visibility with saving valued at $10 million annually.");
+        diExperience.Add("Led a cross-functional team of business users, data scientists, and computer engineers to implment a machine learning data validation model to validate improve supply chain data quality. The project had saving valued at $10 million annually.");
         diExperience.Add("Reduced manual effort required in inventory planning process by 90%, and allowed 3 full-time employees to be redeployed, by closing the gap between the inventory planning system and product catalog data.");
         diExperience.Add("Improved team organization by developing a process to track projects requirements, tasks, manage deadlines, and monitor KPIs.");
 
