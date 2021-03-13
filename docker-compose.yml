@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  dotnetpersonalsitestatic:
+    image: ${DOCKER_REGISTRY-}dotnetpersonalsitestatic
+    build:
+      context: .
+      dockerfile: dotnetPersonalSiteStatic/Dockerfile

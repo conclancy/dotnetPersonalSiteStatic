@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.808.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetPersonalSiteStatic", "dotnetPersonalSiteStatic\dotnetPersonalSiteStatic.csproj", "{F9B596AE-A0C1-4D5A-8A01-7F51886EAA71}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DBB1F918-353F-4557-92F8-A78837CFF74E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7503F9D0-0D9C-4CE9-A6A7-D206E199F784}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9B596AE-A0C1-4D5A-8A01-7F51886EAA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B596AE-A0C1-4D5A-8A01-7F51886EAA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B596AE-A0C1-4D5A-8A01-7F51886EAA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B596AE-A0C1-4D5A-8A01-7F51886EAA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB1F918-353F-4557-92F8-A78837CFF74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB1F918-353F-4557-92F8-A78837CFF74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB1F918-353F-4557-92F8-A78837CFF74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB1F918-353F-4557-92F8-A78837CFF74E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5268CC00-CB74-4CDB-B5F9-951A5CABFDC4}
+	EndGlobalSection
+EndGlobal
