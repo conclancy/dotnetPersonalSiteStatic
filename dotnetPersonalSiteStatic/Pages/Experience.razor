@@ -26,11 +26,11 @@
                     @foreach (Role role in company.Roles)
                     {
                         <div class="row">
-                            <div class="col-sm-8">
-                                <h5>@role.Title</h5>
+                            <div class="col-sm-7">
+                                <h3>@role.Title</h3>
                             </div>
-                            <div class="col-sm-4" style="text-align:right;">
-                                <h5>@role.StartDateString - @role.EndDateString</h5>
+                            <div class="col-sm-5 right-nav-section">
+                                <h3>@role.StartDateString - @role.EndDateString</h3>
                             </div>
                         </div>
                         <div class="row">
@@ -68,7 +68,7 @@
 
         Role STR = new Role
         {
-            Title = "Senior Data Analyst, Security & Technology Risk",
+            Title = "Senior Data Analyst, Security Technology Risk",
             StartDateString = "August 2020",
             EndDateString = "Present",
             Experience = strExperience
