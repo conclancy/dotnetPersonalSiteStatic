@@ -1,0 +1,142 @@
+﻿@page "/experience"
+@using dotnetPersonalSiteStatic.Data
+
+<h1>Experience</h1>
+
+@if (Companies == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @foreach (Company company in Companies)
+    {
+        <div class="container">
+            <h2>@company.Name</h2>
+            <div class="container">
+                @foreach (Role role in company.Roles)
+                {
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>@role.Title</h5>
+                        </div>
+                        <div class="col-sm-4" style="text-align:right;">
+                            <h5>@role.StartDateString - @role.EndDateString</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            @foreach (string experience in role.Experience)
+                            {
+                                <li>@experience</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>   
+    }
+}
+
+
+@code {
+    List<Company> Companies = new List<Company>();
+
+    // TODO: make this a database call
+    protected async override Task OnInitializedAsync()
+    {
+        //*******************//
+        //      Wayfair      //
+        //*******************//
+
+        List<Role> wayfairRoles = new List<Role>();
+
+        // Role - Security Technology Risk
+        List<string> strExperience = new List<string>();
+        strExperience.Add("Conducting Risk Assessments with stakeholders to identify risks and Key Risk Indicators (KRIs) using ISO-31000 Framework.");
+        strExperience.Add("Building ETL pipelines (Python, C#, and SQL) to aggregate and log KRI data in RSA Archer metrics Data Warehouse.");
+        strExperience.Add("Building out a reporting platform to act as a source of truth for Wayfair's KRIs.");
+
+        Role STR = new Role
+        {
+            Title = "Senior Data Analyst, Security & Technology Risk",
+            StartDateString = "August 2020",
+            EndDateString = "Present",
+            Experience = strExperience
+        };
+
+        wayfairRoles.Add(STR);
+
+        // Role - Data Integration
+        List<string> diExperience = new List<string>();
+        diExperience.Add("Led a cross-functional team of business users, data scientists, and computer engineers to improve supply chain data quality and visibility with saving valued at $10 million annually.");
+        diExperience.Add("Reduced manual effort required in inventory planning process by 90%, and allowed 3 full-time employees to be redeployed, by closing the gap between the inventory planning system and product catalog data.");
+        diExperience.Add("Improved team organization by developing a process to track projects requirements, tasks, manage deadlines, and monitor KPIs.");
+
+        Role DI = new Role
+        {
+            Title = "Senior Data Analyst, Data Integrity",
+            StartDateString = "September 2019",
+            EndDateString = "August 2020",
+            Experience = diExperience
+        };
+
+        wayfairRoles.Add(DI);
+
+        // Role - Data Governance
+        List<string> dgExperience = new List<string>();
+        dgExperience.Add("Gathered and aligned requirements from 8 business stakeholder teams to create a single source-of-truth for supply chain data storage and access with an annualized saving of $4 million.");
+        dgExperience.Add("Decreased shipping cost variance by 54% by building a feedback loop to capture, store, and use carrier invoice data to inform future order shipping cost estimates.");
+        dgExperience.Add("Developed process documentation and data definitions to ensure all metrics and KPIs easily measured and accessed by stakeholders.");
+
+        Role DG = new Role
+        {
+            Title = "Data Analyst, Data Governance",
+            StartDateString = "July 2018",
+            EndDateString = "September 2019",
+            Experience = dgExperience
+        };
+
+        wayfairRoles.Add(DG);
+
+        // Wayfair creation
+        Company Wayfair = new Company {
+            Name = "Wayfair",
+            Roles = wayfairRoles
+        };
+
+        Companies.Add(Wayfair);
+
+        //*******************//
+        //       Cree        //
+        //*******************//
+
+        List<Role> creeRoles = new List<Role>();
+
+        // Role - Business Analyst
+        List<string> baExperience =  new List<string>();
+        baExperience.Add("Built work order scheduling SQL database to reduce the amount of manual data gathering required for work order creation. Reduced daily scheduling time from 24 hours to 6 hours.");
+        baExperience.Add("Led a project reducing packaging inventory by 95% by working with suppliers to set up a just-in-time delivery system. A daily report was created to show packaging requirements for the following day’s production.");
+        baExperience.Add("Decreased average work order lead time by 3 day while decreasing inventory by 10% through an automated model that used historical demand to plan safety stock levels.");
+        baExperience.Add("Conducted training sessions for Value Stream Mapping, Transactional Process Improvement, 6S, 8D Problem Solving, and Risk Residual Reduction (R3) programs.");
+
+        Role BA = new Role
+        {
+            Title = "Data Analyst II, Operations",
+            StartDateString = "January 2016",
+            EndDateString = "July 2018",
+            Experience = baExperience
+        };
+
+        creeRoles.Add(BA);
+
+        // Cree creation
+        Company Cree = new Company
+        {
+            Name = "Cree",
+            Roles = creeRoles
+        };
+
+        Companies.Add(Cree);
+    }
+}

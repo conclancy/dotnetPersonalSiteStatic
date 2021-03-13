@@ -6,4 +6,10 @@
     <UserSecretsId>4b4b79a5-b780-4b7c-89cd-851371ffa27b</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\static\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
 </Project>
