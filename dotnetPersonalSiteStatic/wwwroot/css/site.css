@@ -83,6 +83,10 @@ a, .btn-link {
     margin-right auto;
 }
 
+.navbar-brand {
+    color: #d7d7d7
+}
+
 
 @media only screen and (max-width: 600px) {
     h1 {
